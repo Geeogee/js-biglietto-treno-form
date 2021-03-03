@@ -27,30 +27,35 @@
         var basePrice = 0.21;
         var ticketPrice;
         var ticketPriceStr;
-        console.log("Travel length: " + travelLength + "km");
-        console.log("Age of the passenger: " + age);
+        
+        if (travelLength > 0 && age > 0) {
 
-        ticketPrice = travelLength * basePrice;
+            console.log("Travel length: " + travelLength + "km");
+            console.log("Age of the passenger: " + age);
+            ticketPrice = travelLength * basePrice;
+            
+            if (age < 18) {
 
-        if (age < 18) {
+                discount = ticketPrice * 20 / 100;
+                discountStr = discount.toFixed(2);
+                console.log("Discount 20%: €" + discountStr);
+                ticketPrice = ticketPrice - discount;
+            } else if (age > 65) {
 
-            discount = ticketPrice * 20 / 100;
-            discountStr = discount.toFixed(2);
-            console.log("Discount 20%: €" + discountStr);
-            ticketPrice = ticketPrice - discount;
-        } else if (age > 65) {
+                discount = ticketPrice * 40 / 100;
+                discountStr = discount.toFixed(2);
+                console.log("Discount 40%: €"  + discountStr);
+                ticketPrice = ticketPrice - discount;
+            } else {
 
-            discount = ticketPrice * 40 / 100;
-            discountStr = discount.toFixed(2);
-            console.log("Discount 40%: €"  + discountStr);
-            ticketPrice = ticketPrice - discount;
+                console.log("There's no discount available for you. :(")
+            }
+
+            ticketPriceStr = ticketPrice.toFixed(2);
+            console.log("Ticket price: €" + ticketPriceStr);
         } else {
-
-            console.log("There's no discount available for you. :(")
+            console.log("You can't insert negative values for journey length and age!")
         }
-
-        ticketPriceStr = ticketPrice.toFixed(2);
-        console.log("Ticket price: €" + ticketPriceStr);
         
     </script>
     
