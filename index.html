@@ -9,6 +9,7 @@
 <body>
 
     <script>
+
         // Il programma dovrà chiedere all'utente il
         // numero di chilometri che vuole
         // percorrere e l'età del passeggero.
@@ -22,8 +23,10 @@
         var travelLength = prompt("Welcome! What's the length of your journey? (km)");
         var age = prompt("How old are you?");
         var discount;
+        var discountStr;
         var basePrice = 0.21;
         var ticketPrice;
+        var ticketPriceStr;
         console.log("Travel length: " + travelLength + "km");
         console.log("Age of the passenger: " + age);
 
@@ -31,23 +34,20 @@
 
         if (age < 18) {
             discount = ticketPrice * 20 / 100;
-            console.log("Discount 20%: " + discount);
+            discountStr = discount.toFixed(2);
+            console.log("Discount 20%: €" + discountStr);
             ticketPrice = ticketPrice - discount;
         } else if (age > 65) {
             discount = ticketPrice * 40 / 100;
-            console.log("Discount 60%: "  + discount);
+            discountStr = discount.toFixed(2);
+            console.log("Discount 40%: €"  + discountStr);
             ticketPrice = ticketPrice - discount;
         } else {
             console.log("There's no discount available for you. :(")
         }
 
-        console.log("Ticket price: €" + ticketPrice);
-        
-
-        
-
-        
-        
+        ticketPriceStr = ticketPrice.toFixed(2);
+        console.log("Ticket price: €" + ticketPriceStr);
         
     </script>
     
