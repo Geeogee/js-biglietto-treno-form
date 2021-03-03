@@ -33,7 +33,7 @@
             console.log("Travel length: " + travelLength + "km");
             console.log("Age of the passenger: " + age);
             ticketPrice = travelLength * basePrice;
-            
+
             if (age < 18) {
 
                 discount = ticketPrice * 20 / 100;
@@ -54,7 +54,8 @@
             ticketPriceStr = ticketPrice.toFixed(2);
             console.log("Ticket price: €" + ticketPriceStr);
         } else {
-            console.log("You can't insert negative values for journey length and age!")
+
+            console.log("You can't insert negative values or 0 for your journey length and age!")
         }
         
     </script>
