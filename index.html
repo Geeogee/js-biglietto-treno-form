@@ -33,16 +33,19 @@
         ticketPrice = travelLength * basePrice;
 
         if (age < 18) {
+
             discount = ticketPrice * 20 / 100;
             discountStr = discount.toFixed(2);
             console.log("Discount 20%: €" + discountStr);
             ticketPrice = ticketPrice - discount;
         } else if (age > 65) {
+
             discount = ticketPrice * 40 / 100;
             discountStr = discount.toFixed(2);
             console.log("Discount 40%: €"  + discountStr);
             ticketPrice = ticketPrice - discount;
         } else {
+
             console.log("There's no discount available for you. :(")
         }
 
