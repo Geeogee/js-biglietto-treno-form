@@ -21,7 +21,30 @@
 
         var travelLength = prompt("Welcome! What's the length of your journey? (km)");
         var age = prompt("How old are you?");
-        // console.log(travelLength, age);
+        var discount;
+        var basePrice = 0.21;
+        var ticketPrice;
+        console.log("Travel length: " + travelLength + "km");
+        console.log("Age of the passenger: " + age);
+
+        ticketPrice = travelLength * basePrice;
+
+        if (age < 18) {
+            discount = ticketPrice * 20 / 100;
+            console.log("Discount 20%: " + discount);
+            ticketPrice = ticketPrice - discount;
+        } else if (age > 65) {
+            discount = ticketPrice * 40 / 100;
+            console.log("Discount 60%: "  + discount);
+            ticketPrice = ticketPrice - discount;
+        } else {
+            console.log("There's no discount available for you. :(")
+        }
+
+        console.log("Ticket price: €" + ticketPrice);
+        
+
+        
 
         
         
